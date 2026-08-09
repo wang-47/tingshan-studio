@@ -13,6 +13,24 @@ export const metadata: Metadata = {
   title: "Project Detail",
 };
 
+export async function generateStaticParams() {
+  const projectsPath = path.join(process.cwd(), "content", "projects");
+
+  if (!fs.existsSync(projectsPath)) {
+    return [];
+  }
+
+  const slugs = fs
+    .readdirSync(projectsPath)
+    .filter((name) =>
+      fs.statSync(path.join(projectsPath, name)).isDirectory()
+    );
+
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
+
 function getProject(slug: string) {
   const projectPath = path.join(process.cwd(), "content", "projects", slug);
   const infoPath = path.join(projectPath, "info.md");

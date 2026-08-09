@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+
+  basePath: "/tingshan-studio",
+  assetPrefix: "/tingshan-studio/",
+
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
