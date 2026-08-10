@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 const awards = [
   {
@@ -83,20 +83,18 @@ export default function AwardsPage() {
                 overflow: "hidden",
               }}
             >
-              <Image
-                src={award.image}
-                alt={award.title}
-                width={560}
-                height={760}
-                className="award-image"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  transition: "all .6s ease",
-                  filter: "saturate(.88) brightness(.98)",
-                }}
-              />
+              <img
+  src={`/tingshan-studio${award.image}`}
+  alt={award.title}
+  className="award-image"
+  style={{
+    width: "100%",
+    height: "auto",
+    display: "block",
+    transition: "all .6s ease",
+    filter: "saturate(.88) brightness(...)",
+  }}
+/>
             </div>
 
             <div
