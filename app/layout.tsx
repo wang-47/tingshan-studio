@@ -66,7 +66,7 @@ gap-3
 
 <Image
 
-src="/tingshan-studio/images/logo/logo.png"
+src="/images/logo/logo.png"
 
 alt="TINGSHAN logo"
 

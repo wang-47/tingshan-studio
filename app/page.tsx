@@ -20,7 +20,7 @@ export default function Home() {
           </div>
           <div className="relative h-[75vh] w-[45%] overflow-hidden">
             <img
-              src="/tingshan-studio/images/projects/hero.jpg"
+              src="/images/projects/hero.jpg"
               alt="Hero"
               className="h-full w-full object-cover translate-x-8"
             />
