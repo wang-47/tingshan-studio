@@ -84,7 +84,7 @@ export default function AwardsPage() {
               }}
             >
               <img
-  src={`/tingshan-studio${award.image}`}
+  src={award.image}
   alt={award.title}
   className="award-image"
   style={{
