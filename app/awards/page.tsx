@@ -1,5 +1,3 @@
-
-
 const awards = [
   {
     id: "A001",
@@ -25,120 +23,66 @@ const awards = [
 
 export default function AwardsPage() {
   return (
-    <main
-      style={{
-        maxWidth: "1400px",
-        margin: "0 auto",
-        padding: "140px 60px 180px",
-      }}
-    >
+    <main className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 lg:px-[60px] lg:py-[140px]">
       {/* Hero */}
-      <section
-        style={{
-          marginBottom: "180px",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "72px",
-            fontWeight: 300,
-            letterSpacing: "-0.03em",
-            marginBottom: "22px",
-          }}
-        >
+      <section className="mb-24 lg:mb-[180px]">
+        <h1 className="mb-5 text-5xl font-light tracking-[-0.03em] md:text-6xl lg:text-[72px]">
           Awards
         </h1>
 
-        <p
-          style={{
-            maxWidth: "420px",
-            color: "#777",
-            lineHeight: "1.9",
-            fontSize: "16px",
-          }}
-        >
+        <p className="max-w-[420px] text-sm leading-[1.9] text-zinc-500 md:text-base">
           A visual archive of competitions, exhibitions and moments that
           continue to shape our architectural journey.
         </p>
       </section>
 
       {/* Awards */}
-      {awards.map((award, index) => (
-        <section
-          key={award.id}
-          style={{
-            display: "flex",
-            justifyContent:
-              index % 2 === 0 ? "flex-start" : "flex-end",
-            marginBottom: "200px",
-          }}
-        >
-          <div
-            style={{
-              width: "560px",
-            }}
+      <div className="space-y-24 lg:space-y-[200px]">
+        {awards.map((award, index) => (
+          <section
+            key={award.id}
+            className={`flex ${
+              index % 2 === 0
+                ? "justify-start"
+                : "justify-end"
+            }`}
           >
-            <div
-              style={{
-                overflow: "hidden",
-              }}
-            >
-              <img
-  src={award.image}
-  alt={award.title}
-  className="award-image"
-  style={{
-    width: "100%",
-    height: "auto",
-    display: "block",
-    transition: "all .6s ease",
-    filter: "saturate(.88) brightness(...)",
-  }}
-/>
-            </div>
-
-            <div
-              style={{
-                marginTop: "24px",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: ".25em",
-                  color: "#999",
-                  marginBottom: "8px",
-                }}
-              >
-                {award.id}
+            <div className="w-full max-w-[560px]">
+              <div className="overflow-hidden">
+                <img
+                  src={award.image}
+                  alt={award.title}
+                  className="
+                    block
+                    h-auto
+                    w-full
+                    transition
+                    duration-700
+                    hover:scale-105
+                  "
+                  style={{
+                    filter: "saturate(.88) brightness(.98)",
+                  }}
+                />
               </div>
 
-              <div
-                style={{
-                  fontSize: "15px",
-                  color: "#666",
-                }}
-              >
-                {award.title}
+              <div className="mt-6">
+                <div className="mb-2 text-[11px] tracking-[0.25em] text-zinc-400">
+                  {award.id}
+                </div>
+
+                <div className="text-sm text-zinc-600">
+                  {award.title}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        ))}
+      </div>
 
       {/* Footer */}
-      <section
-        style={{
-          paddingTop: "120px",
-          borderTop: "1px solid #ececec",
-        }}
-      >
-        <p
-          style={{
-            color: "#999",
-            fontSize: "15px",
-          }}
-        >
+      <section className="mt-32 border-t border-zinc-100 pt-20">
+        <p className="text-sm text-zinc-400">
           More to come.
         </p>
       </section>
